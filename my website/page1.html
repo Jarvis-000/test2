@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Page Image</title>
+    <style>
+        /* Reset body margins and paddings */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Styling for full-page image */
+        .full-page-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures image covers the entire page without stretching */
+        }
+
+        /* Back button styling */
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: rgba(52, 152, 219, 0.8);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: rgba(41, 128, 185, 0.8);
+        }
+    </style>
+  <!-- CSS to Disable Text and Link Selection -->
+    <style>
+        /* Disable text selection */
+        * {
+            user-select: none;
+            -webkit-user-select: none; /* Safari */
+            -moz-user-select: none;    /* Firefox */
+            -ms-user-select: none;     /* Internet Explorer/Edge */
+            -o-user-select: none;      /* Opera */
+        }
+
+        /* Disable link selection */
+        a {
+            user-select: none; /* Prevent link selection */
+            pointer-events: auto; /* Allow link clicks */
+            -webkit-user-drag: none; /* Prevent drag of link */
+        }
+    </style>
+
+    <!-- JavaScript to Disable Right-Click -->
+    <script>
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault(); // Prevent right-click menu from opening
+        });
+    </script>
+
+</head>
+<body>
+
+    <!-- Full Page Image -->
+    <img src="https://iili.io/diZquAx.md.jpg" alt="Academy Image" class="full-page-image">
+
+    <!-- Back button -->
+    <a href="index.html" class="back-button">Go Back</a>
+
+</body>
+</html>

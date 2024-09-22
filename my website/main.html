@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clickable Links with Dropdown</title>
+    <style>
+        /* Global styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+
+        /* Container for the clickable items */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
+        }
+
+        /* Styling for the clickable links */
+        .clickable-line {
+            display: block;
+            width: 100%;
+            margin: 15px 0;
+            padding: 15px 0;
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .clickable-line:hover {
+            background-color: #2980b9;
+            transform: translateY(-5px);
+        }
+
+        .clickable-line:active {
+            transform: translateY(0);
+        }
+
+        /* Dropdown styling */
+        .dropdown {
+            display: none;
+            flex-direction: column;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        .dropdown a {
+            text-decoration: none;
+            background-color: #2ecc71;
+            color: white;
+            padding: 10px;
+            margin: 5px 0;
+            text-align: center;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown a:hover {
+            background-color: #27ae60;
+        }
+
+        /* Responsive image styling */
+        .header-image {
+            width: 100%;
+            height: auto;
+            max-height: 300px;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Footer section */
+        footer {
+            margin-top: 50px;
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            .clickable-line {
+                font-size: 18px;
+            }
+
+            .header-image {
+                max-height: 200px;
+            }
+        }
+    </style>
+
+    <script>
+        function toggleDropdown() {
+            var dropdown = document.getElementById("dropdown-options");
+            if (dropdown.style.display === "none" || dropdown.style.display === "") {
+                dropdown.style.display = "flex";
+            } else {
+                dropdown.style.display = "none";
+            }
+        }
+    </script>
+  <!-- CSS to Disable Text and Link Selection -->
+    <style>
+        /* Disable text selection */
+        * {
+            user-select: none;
+            -webkit-user-select: none; /* Safari */
+            -moz-user-select: none;    /* Firefox */
+            -ms-user-select: none;     /* Internet Explorer/Edge */
+            -o-user-select: none;      /* Opera */
+        }
+
+        /* Disable link selection */
+        a {
+            user-select: none; /* Prevent link selection */
+            pointer-events: auto; /* Allow link clicks */
+            -webkit-user-drag: none; /* Prevent drag of link */
+        }
+    </style>
+
+    <!-- JavaScript to Disable Right-Click -->
+    <script>
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault(); // Prevent right-click menu from opening
+        });
+    </script>
+
+</head>
+<body>
+
+    <div class="container">
+        <h1>Select any Academy</h1>
+
+        <a href="https://drive.google.com/drive/folders/105ZUqrGu95enc4Qj9jKprYHY-uOX4u97" class="clickable-line">For PDF Click Here</a>
+        <a href="sti.html" class="clickable-line">STI-End Game Test Series</a>
+
+        <img src="https://iili.io/diQLo3F.webp" alt="Academy 1">
+        <a href="page1.html" class="clickable-line">Bhains Ki Pathshala</a>
+
+        <img src="https://iili.io/dibgU2n.webp" alt="Academy 0">
+        <a href="GCA.html" class="clickable-line">GCA-The Khakhi Factory</a>
+
+        <img src="https://iili.io/diQQt07.webp" alt="Academy 2">
+        <a href="#" class="clickable-line" onclick="toggleDropdown()">Dhyey Live GPSC</a>
+        
+        <!-- Dropdown options -->
+        <div id="dropdown-options" class="dropdown">
+            <a href="Foundation.html">Dhyey GPSC Foundation Batch 2024</a>
+            <a href="સફલ.html">સફલ GPSC Class 1-2 Mains Live</a>
+           
+        </div>
+
+        <img src="https://iili.io/diQZikg.webp" alt="Academy 3">
+        <a href="page3.html" class="clickable-line">GyanLive</a>
+    </div>
+
+    <footer>
+        © 2024 Let's Help 
+    </footer>
+
+</body>
+</html>
